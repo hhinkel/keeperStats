@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.keeperstats.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/keeper" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/home_team_score"
+                    android:textColor="@color/home_label_color"
+                    android:textSize="@dimen/score_label_height"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/kirkwood_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/data_text_color"
+                    android:textSize="@dimen/score_data_height" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/home_team_score"
+                    android:textColor="@color/home_label_color"
+                    android:textSize="@dimen/other_label_height" />
+
+                <TextView
+                    android:id="@+id/kirkwood_shots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/data_text_color"
+                    android:textSize="@dimen/other_data_height" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/home_team_percentage"
+                    android:textColor="@color/home_label_color"
+                    android:textSize="@dimen/other_label_height" />
+
+                <TextView
+                    android:id="@+id/kirkwood_save_percent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/data_text_color"
+                    android:textSize="@dimen/other_data_height" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:background="@color/home_button_color"
+                    android:onClick="pointForKirkwood"
+                    android:text="@string/point" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:background="@color/home_button_color"
+                    android:onClick="shotForKirkwood"
+                    android:paddingBottom="@dimen/padding"
+                    android:text="@string/shot" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/one_dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/text_margin"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/opp_team_score"
+                    android:textColor="@color/opp_label_color"
+                    android:textSize="@dimen/score_label_height"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/opp_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/data_text_color"
+                    android:textSize="@dimen/score_data_height" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/opp_team_shots"
+                    android:textColor="@color/opp_label_color"
+                    android:textSize="@dimen/other_label_height" />
+
+                <TextView
+                    android:id="@+id/opp_shots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/data_text_color"
+                    android:textSize="@dimen/other_data_height" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/opp_team_percentage"
+                    android:textColor="@color/opp_label_color"
+                    android:textSize="@dimen/other_label_height" />
+
+                <TextView
+                    android:id="@+id/opp_save_percent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/data_text_color"
+                    android:textSize="@dimen/other_data_height" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/between_button_margin"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:background="@color/opp_button_color"
+                    android:onClick="pointForOpponent"
+                    android:text="@string/point" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/between_button_margin"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:background="@color/opp_button_color"
+                    android:onClick="shotForOpponent"
+                    android:text="@string/shot" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/text_margin"
+        android:onClick="reset"
+        android:text="@string/reset" />
+
+</RelativeLayout>

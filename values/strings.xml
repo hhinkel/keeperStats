@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Keeper Stats</string>
+    <string name="home_team_score">Kirkwood\'s Score</string>
+    <string name="opp_team_score">Opponent\'s Score</string>
+    <string name="home_team_shots">Kirkwood\'s Shots on Goal</string>
+    <string name="opp_team_shots">Opponent\'s Shots on Goal</string>
+    <string name="home_team_percentage">Save Percentage Kirkwood</string>
+    <string name="opp_team_percentage">Save Percentage Opponent</string>
+    <string name="point">One Point</string>
+    <string name="shot">One Shot</string>
+    <string name="reset">RESET</string>
+</resources>

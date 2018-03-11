@@ -8,6 +8,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //State Keys for restoring Application state
+    static private final String SCORE_KIRKWOOD = "scoreK";
+    static private final String SCORE_OPP = "scoreOpp";
+    static private final String SHOTS_KIRKWOOD = "shotsK";
+    static private final String SHOTS_OPP = "shotsOpp";
+    static private final String PERCENT_KIRKWOOD = "percentK";
+    static private final String PERCENT_OPP = "percentOpp";
+
+    //Global Variables
     int scoreKirkwood = 0;
     int scoreOpponent = 0;
     int shotsKirkwood = 0;
@@ -19,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        displayData();
+    }
+
+    protected void displayData() {
         displayScoreForKirkwood(scoreKirkwood);
         displayScoreForOpp(scoreOpponent);
         displayShotsForKirkwood(shotsKirkwood);
@@ -29,6 +42,32 @@ public class MainActivity extends AppCompatActivity {
         displayPercentForOpp(percentOpponent);
     }
 
+    //Recovery of variables after activity resumed
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreKirkwood = savedInstanceState.getInt(SCORE_KIRKWOOD);
+        scoreOpponent = savedInstanceState.getInt(SCORE_OPP);
+        shotsKirkwood = savedInstanceState.getInt(SHOTS_KIRKWOOD);
+        shotsOpponent = savedInstanceState.getInt(SHOTS_OPP);
+        percentKirkwood = savedInstanceState.getDouble(PERCENT_KIRKWOOD);
+        percentOpponent = savedInstanceState.getDouble(PERCENT_OPP);
+        displayData();
+    }
+
+    //Save Instance state for recovery
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt(SCORE_KIRKWOOD, scoreKirkwood);
+        savedInstanceState.putInt(SCORE_OPP, scoreOpponent);
+        savedInstanceState.putInt(SHOTS_KIRKWOOD, shotsKirkwood);
+        savedInstanceState.putInt(SHOTS_OPP, shotsOpponent);
+        savedInstanceState.putDouble(PERCENT_KIRKWOOD, percentKirkwood);
+        savedInstanceState.putDouble(PERCENT_OPP, percentOpponent);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    //Determine percent of saves
     private double determinePercent(double score, double shots) {
         if(score == 0)
             return 1.0;
@@ -39,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Add a point and a shot for Kirkwood
     public void pointForKirkwood (View view) {
         scoreKirkwood = scoreKirkwood + 1;
         shotsKirkwood = shotsKirkwood + 1;
@@ -48,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         displayPercentForOpp(percent);
     }
 
+    //Add a point and a shot for the Opponent
     public void pointForOpponent(View view) {
         scoreOpponent = scoreOpponent + 1;
         shotsOpponent = shotsOpponent + 1;
@@ -57,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         displayPercentForKirkwood(percent);
     }
 
+    //Add a shot for Kirkwood
     public void shotForKirkwood (View view) {
         shotsKirkwood = shotsKirkwood + 1;
         double percent = determinePercent(scoreKirkwood, shotsKirkwood);
@@ -64,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         displayPercentForOpp(percent);
     }
 
+    //Add a shot for the Opponent
     public void shotForOpponent (View view) {
         shotsOpponent = shotsOpponent + 1;
         double percent = determinePercent(scoreOpponent, shotsOpponent);
@@ -71,46 +114,46 @@ public class MainActivity extends AppCompatActivity {
         displayPercentForKirkwood(percent);
     }
 
+    //Reset and redisply values
     public void reset(View view) {
         scoreKirkwood = 0;
         scoreOpponent = 0;
         shotsKirkwood = 0;
         shotsOpponent = 0;
-        percentKirkwood = determinePercent(scoreKirkwood, shotsKirkwood);
-        percentOpponent = determinePercent(scoreOpponent, shotsOpponent);
-        displayScoreForKirkwood(scoreKirkwood);
-        displayScoreForOpp(scoreOpponent);
-        displayShotsForKirkwood(shotsKirkwood);
-        displayShotsForOpp(shotsOpponent);
-        displayPercentForKirkwood(percentKirkwood);
-        displayPercentForOpp(percentOpponent);
+        displayData();
     }
 
+    //Display Score for Kirkwood
     public void displayScoreForKirkwood(int score) {
         TextView scoreView = (TextView) findViewById(R.id.kirkwood_score);
         scoreView.setText(String.valueOf(score));
     }
 
+    //Display Score for Opponent
     public void displayScoreForOpp(int score) {
         TextView scoreView = (TextView) findViewById(R.id.opp_score);
         scoreView.setText(String.valueOf(score));
     }
 
+    //Display shots for Kirkwood
     public void displayShotsForKirkwood(int shots) {
         TextView scoreView = (TextView) findViewById(R.id.kirkwood_shots);
         scoreView.setText(String.valueOf(shots));
     }
 
+    //Display shots for Opponent
     public void displayShotsForOpp(int shots) {
         TextView scoreView = (TextView) findViewById(R.id.opp_shots);
         scoreView.setText(String.valueOf(shots));
     }
 
+    //Display Keeper Percentage for Kirkwood
     public void displayPercentForKirkwood(double percent) {
         TextView scoreView = (TextView) findViewById(R.id.kirkwood_save_percent);
         scoreView.setText(String.format("%.4f",percent));
     }
 
+    //Display Keeper Percentage for Opponent
     public void displayPercentForOpp(double percent) {
         TextView scoreView = (TextView) findViewById(R.id.opp_save_percent);
         scoreView.setText(String.format("%.4f",percent));

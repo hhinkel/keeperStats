@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="button_margin">24dp</dimen>
+    <dimen name="between_button_margin">8dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="land_line_height">200dp</dimen>
+    <dimen name="score_label_height">20sp</dimen>
+    <dimen name="score_data_height">56sp</dimen>
+    <dimen name="other_label_height">14sp</dimen>
+    <dimen name="other_data_height">35sp</dimen>
+</resources>
