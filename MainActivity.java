@@ -23,11 +23,23 @@ public class MainActivity extends AppCompatActivity {
     int shotsOpponent = 0;
     double percentKirkwood;
     double percentOpponent;
+    TextView scoreViewKirkwood;
+    TextView scoreViewOpp;
+    TextView shotViewKirkwood;
+    TextView shotViewOpp;
+    TextView percentViewKirkwood;
+    TextView percentViewOpp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scoreViewKirkwood = (TextView) findViewById(R.id.kirkwood_score);
+        scoreViewOpp = (TextView) findViewById(R.id.opp_score);
+        shotViewKirkwood = (TextView) findViewById(R.id.kirkwood_shots);
+        shotViewOpp = (TextView) findViewById(R.id.opp_shots);
+        percentViewKirkwood = (TextView) findViewById(R.id.kirkwood_save_percent);
+        percentViewOpp = (TextView) findViewById(R.id.opp_save_percent);
         displayData();
     }
 
@@ -125,37 +137,31 @@ public class MainActivity extends AppCompatActivity {
 
     //Display Score for Kirkwood
     public void displayScoreForKirkwood(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.kirkwood_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewKirkwood.setText(String.valueOf(score));
     }
 
     //Display Score for Opponent
     public void displayScoreForOpp(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.opp_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewOpp.setText(String.valueOf(score));
     }
 
     //Display shots for Kirkwood
     public void displayShotsForKirkwood(int shots) {
-        TextView scoreView = (TextView) findViewById(R.id.kirkwood_shots);
-        scoreView.setText(String.valueOf(shots));
+        shotViewKirkwood.setText(String.valueOf(shots));
     }
 
     //Display shots for Opponent
     public void displayShotsForOpp(int shots) {
-        TextView scoreView = (TextView) findViewById(R.id.opp_shots);
-        scoreView.setText(String.valueOf(shots));
+        shotViewOpp.setText(String.valueOf(shots));
     }
 
     //Display Keeper Percentage for Kirkwood
     public void displayPercentForKirkwood(double percent) {
-        TextView scoreView = (TextView) findViewById(R.id.kirkwood_save_percent);
-        scoreView.setText(String.format("%.4f",percent));
+        percentViewKirkwood.setText(String.format("%.4f",percent));
     }
 
     //Display Keeper Percentage for Opponent
     public void displayPercentForOpp(double percent) {
-        TextView scoreView = (TextView) findViewById(R.id.opp_save_percent);
-        scoreView.setText(String.format("%.4f",percent));
+        percentViewOpp.setText(String.format("%.4f",percent));
     }
 }
