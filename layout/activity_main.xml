@@ -30,80 +30,58 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/KirkwoodScore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/text_margin"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:text="@string/home_team_score"
-                    android:textColor="@color/home_label_color"
-                    android:textSize="@dimen/score_label_height"
-                    android:textStyle="bold" />
+                    android:text="@string/home_team_score"  />
 
                 <TextView
+                    style="@style/Score"
                     android:id="@+id/kirkwood_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/data_text_color"
-                    android:textSize="@dimen/score_data_height" />
+                    android:fontFamily="sans-serif-light" />
 
                 <TextView
+                    style="@style/KirkwoodOther"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:text="@string/home_team_score"
-                    android:textColor="@color/home_label_color"
-                    android:textSize="@dimen/other_label_height" />
+                    android:text="@string/home_team_score" />
 
                 <TextView
+                    style="@style/Other"
                     android:id="@+id/kirkwood_shots"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/data_text_color"
-                    android:textSize="@dimen/other_data_height" />
+                    android:fontFamily="sans-serif-light" />
 
                 <TextView
+                    style="@style/KirkwoodOther"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:text="@string/home_team_percentage"
-                    android:textColor="@color/home_label_color"
-                    android:textSize="@dimen/other_label_height" />
+                    android:text="@string/home_team_percentage" />
 
                 <TextView
+                    style="@style/Other"
                     android:id="@+id/kirkwood_save_percent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/data_text_color"
-                    android:textSize="@dimen/other_data_height" />
+                    android:fontFamily="sans-serif-light" />
 
                 <Button
+                    style="@style/KirkwoodButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/padding"
-                    android:layout_marginLeft="@dimen/button_margin"
-                    android:layout_marginRight="@dimen/button_margin"
-                    android:background="@color/home_button_color"
                     android:onClick="pointForKirkwood"
                     android:text="@string/point" />
 
                 <Button
+                    style="@style/KirkwoodButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/button_margin"
-                    android:layout_marginRight="@dimen/button_margin"
-                    android:background="@color/home_button_color"
                     android:onClick="shotForKirkwood"
                     android:paddingBottom="@dimen/padding"
                     android:text="@string/shot" />
@@ -124,81 +102,59 @@
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/OppScore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/text_margin"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:text="@string/opp_team_score"
-                    android:textColor="@color/opp_label_color"
-                    android:textSize="@dimen/score_label_height"
-                    android:textStyle="bold" />
+                    android:text="@string/opp_team_score" />
 
                 <TextView
+                    style="@style/Score"
                     android:id="@+id/opp_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/data_text_color"
-                    android:textSize="@dimen/score_data_height" />
+                    android:fontFamily="sans-serif-light" />
 
                 <TextView
+                    style="@style/OppOther"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:text="@string/opp_team_shots"
-                    android:textColor="@color/opp_label_color"
-                    android:textSize="@dimen/other_label_height" />
+                    android:text="@string/opp_team_shots" />
 
                 <TextView
+                    style="@style/Other"
                     android:id="@+id/opp_shots"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/data_text_color"
-                    android:textSize="@dimen/other_data_height" />
+                    android:fontFamily="sans-serif-light" />
 
                 <TextView
+                    style="@style/OppOther"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:text="@string/opp_team_percentage"
-                    android:textColor="@color/opp_label_color"
-                    android:textSize="@dimen/other_label_height" />
+                    android:text="@string/opp_team_percentage" />
 
                 <TextView
+                    style="@style/Other"
                     android:id="@+id/opp_save_percent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin"
-                    android:fontFamily="sans-serif-light"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/data_text_color"
-                    android:textSize="@dimen/other_data_height" />
+                    android:fontFamily="sans-serif-light" />
 
                 <Button
+                    style="@style/OppButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/between_button_margin"
-                    android:layout_marginLeft="@dimen/button_margin"
-                    android:layout_marginRight="@dimen/button_margin"
-                    android:background="@color/opp_button_color"
                     android:onClick="pointForOpponent"
                     android:text="@string/point" />
 
                 <Button
+                    style="@style/OppButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/between_button_margin"
-                    android:layout_marginLeft="@dimen/button_margin"
-                    android:layout_marginRight="@dimen/button_margin"
-                    android:background="@color/opp_button_color"
                     android:onClick="shotForOpponent"
                     android:text="@string/shot" />
             </LinearLayout>
